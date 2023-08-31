@@ -3,8 +3,8 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
-  url      = env("DATABASE_URL")
+  provider     = "mysql"
+  url          = env("DATABASE_URL")
   relationMode = "prisma"
 }
 
@@ -16,19 +16,4 @@ model WebhookEvent {
   type        String
 
   @@map("webhook_events")
-}
-
-enum EventType {
-  APPOINTMENT_CREATED
-  APPOINTMENT_ACCEPTED
-  APPOINTMENT_CANCELED
-  APPOINTMENT_FINISHED
-  DOCTOR_CHANGED
-  DOCTOR_VIDEO_ONLINE
-  APPOINTMENT_DATE_CHANGED
-  IMPORTATION_STARTED
-  IMPORTATION_COMPLETED
-  PATIENT_VIDEO_NOSHOW
-  DOCTOR_VIDEO_NOSHOW
-  NURSE_FOLLOWUP
 }
