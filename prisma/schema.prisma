@@ -1,0 +1,33 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model WebhookEvent {
+  id          Int      @id @unique @default(autoincrement())
+  eventType   String
+  date        DateTime
+  appointment Int
+  type        String
+
+  @@map("webhook_events")
+}
+
+enum EventType {
+  APPOINTMENT_CREATED
+  APPOINTMENT_ACCEPTED
+  APPOINTMENT_CANCELED
+  APPOINTMENT_FINISHED
+  DOCTOR_CHANGED
+  DOCTOR_VIDEO_ONLINE
+  APPOINTMENT_DATE_CHANGED
+  IMPORTATION_STARTED
+  IMPORTATION_COMPLETED
+  PATIENT_VIDEO_NOSHOW
+  DOCTOR_VIDEO_NOSHOW
+  NURSE_FOLLOWUP
+}
