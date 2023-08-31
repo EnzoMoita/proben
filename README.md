@@ -17,4 +17,3 @@ Exclusão de Evento (DELETE): Ao receber um evento de exclusão de atendimento, 
 Uso
 Para enviar um evento de webhook para nossa aplicação, siga as instruções da documentação do sistema de origem para a estrutura do payload. Certifique-se de incluir os campos corretos, como eventType, date, resource.appointment e resource.type.
 
-# proben
